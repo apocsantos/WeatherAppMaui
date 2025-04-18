@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="WeatherAppMaui.MainPage"
+             Title="Weather Station">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="10">
+            <Label Text="Latest Observation" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Frame BorderColor="Gray" Padding="10" CornerRadius="5">
+                <StackLayout Spacing="5">
+                    <Label x:Name="TempLabel" FontSize="18" Text="Temperature: Loading..." />
+                    <Label x:Name="HumidityLabel" FontSize="18" Text="Humidity: Loading..." />
+                    <Label x:Name="WindLabel" FontSize="18" Text="Wind Speed: Loading..." />
+                    <Label x:Name="TimestampLabel" FontSize="16" Text="Timestamp: Loading..." />
+                    <Label x:Name="ConditionLabel" FontSize="16" Text="Condition: Loading..." />
+                </StackLayout>
+            </Frame>
+            <Label x:Name="ErrorLabel" FontSize="16" TextColor="WhiteSmoke" IsVisible="False" HorizontalOptions="Center" />
+            <ActivityIndicator x:Name="LoadingIndicator" IsRunning="True" HorizontalOptions="Center" />
+            <Button Text="View History" Clicked="OnHistoryClicked" HorizontalOptions="Center" />
+            <Button Text="View Forecast" Clicked="OnForecastClicked" HorizontalOptions="Center" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
